@@ -11,5 +11,9 @@ services:
   app2:
     build: .
     command: ["node", "src/app2.js"]
+    environment:
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}
     ports:
       - 3001:3001
