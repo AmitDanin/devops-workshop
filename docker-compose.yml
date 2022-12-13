@@ -7,6 +7,9 @@ services:
       - SECOND_SERVICE_URL=http://app2:3001
     ports:
       - 3000:3000
+    volumes:
+      - ./static:/usr/src/app/static
+      - ./logs:/usr/src/app/logs
 
   app2:
     build: .
