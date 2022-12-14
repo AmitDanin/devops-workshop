@@ -6,7 +6,7 @@ services:
     environment:
       - SECOND_SERVICE_URL=http://app2:3001
     ports:
-      - 3000:3000
+      - 80:3000
     volumes:
       - ./static:/usr/src/app/static
       - ./logs:/usr/src/app/logs
@@ -14,9 +14,5 @@ services:
   app2:
     build: .
     command: ["node", "src/app2.js"]
-    environment:
-      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
-      - AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}
     ports:
       - 3001:3001
