@@ -16,3 +16,5 @@ services:
     command: ["node", "src/app2.js"]
     ports:
       - 3001:3001
+    volumes:
+      - ~/.aws/:/root/.aws:ro
